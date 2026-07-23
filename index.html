@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nymeria — Digital Transformation Partner</title>
+<meta name="description" content="Nymeria designs and ships websites, mobile apps, and AI solutions — then helps your organization adopt them.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/jpeg" href="uploads/nymeria-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:oklch(0.99 0.003 250); font-family:'Inter',Helvetica,Arial,sans-serif; }
+  h1, h2, h3, h4 { font-family:'Space Grotesk','Inter',Helvetica,Arial,sans-serif; margin:0; }
+  a { color:oklch(0.55 0.16 55); text-decoration:none; }
+  a:hover { color:oklch(0.62 0.17 55); }
+  ::selection { background:oklch(0.7 0.16 55 / 0.3); }
+  img { max-width:100%; display:block; }
+
+  .nav-links a, .footer-links a { transition: color .15s ease; }
+  .btn { transition: transform .15s ease, opacity .15s ease; }
+  .btn:hover { transform: translateY(-1px); opacity:.92; }
+
+  .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+  .nav-toggle { display:none; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; border:1px solid oklch(0.85 0.01 250); background:transparent; cursor:pointer; padding:0; flex-shrink:0; transition:border-color .15s ease, background .15s ease; }
+  .nav-toggle:hover { background:oklch(0.94 0.01 250); }
+
+  .eyebrow-pill { display:inline-flex; align-items:center; gap:8px; padding:7px 14px; border-radius:100px; font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+  .eyebrow-pill::before { content:''; width:6px; height:6px; border-radius:50%; background:currentColor; flex-shrink:0; }
+  .eyebrow-pill--light { background:oklch(0.94 0.02 55); border:1px solid oklch(0.87 0.05 55); color:oklch(0.5 0.16 55); }
+  .eyebrow-pill--dark { background:oklch(0.3 0.05 250); border:1px solid oklch(0.4 0.05 250); color:oklch(0.75 0.1 55); }
+
+  .icon-badge { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform .25s ease; }
+  .card-hover { transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .card-hover:hover { transform:translateY(-6px); }
+  .card-hover--light:hover { box-shadow:0 24px 48px -20px oklch(0.3 0.04 250 / 0.22); border-color:oklch(0.8 0.06 55); }
+  .card-hover--dark:hover { box-shadow:0 24px 48px -20px oklch(0 0 0 / 0.45); border-color:oklch(0.5 0.1 55); }
+  .card-hover:hover .icon-badge { transform:scale(1.08); }
+
+  @keyframes pulse-glow { 0%,100% { opacity:.65; transform:scale(1); } 50% { opacity:1; transform:scale(1.1); } }
+  .glow-orb { animation: pulse-glow 7s ease-in-out infinite; }
+
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.reveal-visible { opacity:1; transform:translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow-orb { animation:none; }
+    .reveal { opacity:1 !important; transform:none !important; transition:none; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding:16px 24px !important; }
+    .nav-links { display:none !important; }
+    .nav-toggle { display:flex !important; }
+    section { padding-left:24px !important; padding-right:24px !important; }
+    .hero-grid { grid-template-columns:1fr !important; }
+    .hero-grid h1 { font-size:38px !important; }
+    .ai-grid { grid-template-columns:1fr !important; }
+    .about-grid { grid-template-columns:1fr !important; }
+    .grid-4 { grid-template-columns:repeat(2,1fr) !important; }
+    .grid-2 { grid-template-columns:repeat(2,1fr) !important; }
+    footer { flex-direction:column !important; gap:16px; text-align:center; }
+  }
+
+  @media (min-width: 901px) {
+    #mobile-menu-panel { display:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div style="background:oklch(0.99 0.003 250); color:oklch(0.2 0.02 250); overflow-x:hidden;">
+
+  <!-- NAV -->
+  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:18px 56px; background:oklch(0.99 0.003 250 / 0.85); backdrop-filter:blur(10px); border-bottom:1px solid oklch(0.9 0.01 250);">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <img src="uploads/nymeria-logo.jpg" alt="Nymeria" style="width:38px; height:38px; border-radius:8px; object-fit:cover;" />
+      <span style="font-weight:800; font-size:19px; letter-spacing:-0.02em; color:oklch(0.22 0.05 250);">NYMERIA</span>
+    </div>
+    <div class="nav-links" style="display:flex; align-items:center; gap:36px; font-size:15px; font-weight:500; color:oklch(0.35 0.02 250);">
+      <a href="#services" style="color:inherit;">Services</a>
+      <a href="#ai" style="color:inherit;">AI Solutions</a>
+      <a href="#about" style="color:inherit;">About</a>
+      <a href="#contact" style="color:inherit;">Contact</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <a href="#contact" class="btn" style="background:oklch(0.22 0.05 250); color:oklch(0.98 0.005 250); padding:11px 22px; border-radius:100px; font-weight:600; font-size:14.5px;">Book a Call</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="nav-toggle-path" d="M2 5h16M2 10h16M2 15h16" stroke="oklch(0.22 0.05 250)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu-panel" style="display:none; position:fixed; inset:0; z-index:60; background:oklch(0.99 0.003 250); flex-direction:column; align-items:center; justify-content:center; gap:6px;">
+    <button aria-label="Close menu" onclick="closeMobileMenu()" style="position:absolute; top:18px; right:24px; width:40px; height:40px; border-radius:50%; border:1px solid oklch(0.85 0.01 250); background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center;">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l16 16M17 1L1 17" stroke="oklch(0.22 0.05 250)" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#services" onclick="closeMobileMenu()" style="color:oklch(0.22 0.05 250); font-size:24px; font-weight:700; padding:16px;">Services</a>
+    <a href="#ai" onclick="closeMobileMenu()" style="color:oklch(0.22 0.05 250); font-size:24px; font-weight:700; padding:16px;">AI Solutions</a>
+    <a href="#about" onclick="closeMobileMenu()" style="color:oklch(0.22 0.05 250); font-size:24px; font-weight:700; padding:16px;">About</a>
+    <a href="#contact" onclick="closeMobileMenu()" style="color:oklch(0.22 0.05 250); font-size:24px; font-weight:700; padding:16px;">Contact</a>
+    <a href="#contact" onclick="closeMobileMenu()" style="margin-top:20px; background:oklch(0.65 0.16 55); color:oklch(0.15 0.02 55); padding:14px 30px; border-radius:100px; font-weight:700; font-size:16px;">Book a Call</a>
+  </div>
+
+  <!-- HERO -->
+  <section style="position:relative; padding:120px 56px 140px; background:oklch(0.22 0.05 250); overflow:hidden;">
+    <canvas id="hero-canvas" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;"></canvas>
+    <div class="glow-orb" style="position:absolute; top:-180px; right:-160px; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle, oklch(0.62 0.15 55 / 0.18), transparent 70%);"></div>
+    <div class="hero-grid" style="position:relative; max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;">
+      <div>
+        <div class="reveal eyebrow-pill eyebrow-pill--dark" style="margin-bottom:28px;">Digital Transformation Partner</div>
+        <h1 class="reveal" style="transition-delay:.08s; font-size:58px; line-height:1.08; font-weight:800; letter-spacing:-0.02em; color:oklch(0.98 0.005 250); margin:0 0 24px;">We build the software<br/>your transformation<br/>runs on.</h1>
+        <p class="reveal" style="transition-delay:.16s; font-size:19px; line-height:1.6; color:oklch(0.78 0.02 250); max-width:520px; margin:0 0 40px;">Nymeria designs and ships websites, mobile apps, and AI solutions — then helps your organization adopt them. One team, from strategy to production.</p>
+        <div class="reveal" style="transition-delay:.24s; display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="#contact" class="btn" style="background:oklch(0.65 0.16 55); color:oklch(0.15 0.02 55); padding:15px 28px; border-radius:100px; font-weight:700; font-size:16px;">Start a Project</a>
+          <a href="#services" class="btn" style="border:1px solid oklch(0.45 0.04 250); color:oklch(0.9 0.01 250); padding:15px 28px; border-radius:100px; font-weight:600; font-size:16px;">Explore Services</a>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.12s; display:flex; justify-content:center;">
+        <img src="uploads/nymeria-logo.jpg" alt="Nymeria mark" style="width:340px; height:340px; object-fit:cover; border-radius:24px; box-shadow:0 40px 80px -20px oklch(0.1 0.05 250 / 0.6);" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="padding:120px 56px; max-width:1280px; margin:0 auto;">
+    <div style="max-width:640px; margin:0 auto 64px; text-align:center;">
+      <div class="reveal eyebrow-pill eyebrow-pill--light" style="margin-bottom:14px;">What We Do</div>
+      <h2 class="reveal" style="transition-delay:.06s; font-size:40px; font-weight:800; letter-spacing:-0.02em; margin:0 0 16px; color:oklch(0.2 0.02 250);">A full software house, built for transformation</h2>
+      <p class="reveal" style="transition-delay:.12s; font-size:17px; color:oklch(0.45 0.02 250); line-height:1.6; margin:0;">From first concept to running in production — and your team knowing how to use it.</p>
+    </div>
+    <div class="grid-4">
+      <div class="reveal card-hover card-hover--light" style="transition-delay:0s; background:oklch(0.99 0.003 250); border:1px solid oklch(0.91 0.01 250); border-radius:16px; padding:32px 26px; display:flex; flex-direction:column; gap:14px;">
+        <div class="icon-badge" style="background:oklch(0.94 0.02 55); border:1px solid oklch(0.87 0.05 55);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="14" rx="2" stroke="oklch(0.55 0.16 55)" stroke-width="1.7"/><path d="M3 9h18M8 21h8M12 18v3" stroke="oklch(0.55 0.16 55)" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:18px; font-weight:700; margin:0; color:oklch(0.2 0.02 250);">Web Platforms</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Portals and complex web applications built for scale.</p>
+      </div>
+      <div class="reveal card-hover card-hover--light" style="transition-delay:.08s; background:oklch(0.99 0.003 250); border:1px solid oklch(0.91 0.01 250); border-radius:16px; padding:32px 26px; display:flex; flex-direction:column; gap:14px;">
+        <div class="icon-badge" style="background:oklch(0.94 0.02 55); border:1px solid oklch(0.87 0.05 55);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="oklch(0.55 0.16 55)" stroke-width="1.7"/><path d="M11 18h2" stroke="oklch(0.55 0.16 55)" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:18px; font-weight:700; margin:0; color:oklch(0.2 0.02 250);">Mobile Apps</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Native and cross-platform apps for iOS and Android, end to end.</p>
+      </div>
+      <div class="reveal card-hover card-hover--light" style="transition-delay:.16s; background:oklch(0.99 0.003 250); border:1px solid oklch(0.91 0.01 250); border-radius:16px; padding:32px 26px; display:flex; flex-direction:column; gap:14px;">
+        <div class="icon-badge" style="background:oklch(0.94 0.02 55); border:1px solid oklch(0.87 0.05 55);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l2.2 4.6L19 9l-4.8 1.4L12 15l-2.2-4.6L5 9l4.8-1.4L12 3Z" stroke="oklch(0.55 0.16 55)" stroke-width="1.5" stroke-linejoin="round"/><path d="M19 15l.9 1.9L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-1.1L19 15Z" stroke="oklch(0.55 0.16 55)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 style="font-size:18px; font-weight:700; margin:0; color:oklch(0.2 0.02 250);">AI & LLM Products</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Custom AI features and copilots built on your data and workflows.</p>
+      </div>
+      <div class="reveal card-hover card-hover--light" style="transition-delay:.24s; background:oklch(0.99 0.003 250); border:1px solid oklch(0.91 0.01 250); border-radius:16px; padding:32px 26px; display:flex; flex-direction:column; gap:14px;">
+        <div class="icon-badge" style="background:oklch(0.94 0.02 55); border:1px solid oklch(0.87 0.05 55);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="8" r="3" stroke="oklch(0.55 0.16 55)" stroke-width="1.7"/><path d="M2.5 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="oklch(0.55 0.16 55)" stroke-width="1.7" stroke-linecap="round"/><path d="M16 8.5a3 3 0 1 0 0-6M15 14.2c2.9.4 5 2.9 5 5.8" stroke="oklch(0.55 0.16 55)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 style="font-size:18px; font-weight:700; margin:0; color:oklch(0.2 0.02 250);">Adoption Consulting</h3>
+        <p style="font-size:14.5px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Strategy and change management to embed AI across your organization.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI SOLUTIONS -->
+  <section id="ai" style="padding:120px 56px; background:oklch(0.22 0.05 250); position:relative; overflow:hidden;">
+    <div class="glow-orb" style="position:absolute; bottom:-200px; left:-160px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, oklch(0.6 0.15 55 / 0.15), transparent 70%);"></div>
+    <div class="ai-grid" style="position:relative; max-width:1280px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:72px; align-items:center;">
+      <div class="reveal">
+        <div class="eyebrow-pill eyebrow-pill--dark" style="margin-bottom:14px;">AI Solutions & Consulting</div>
+        <h2 style="font-size:38px; font-weight:800; letter-spacing:-0.02em; color:oklch(0.98 0.005 250); margin:0 0 20px; line-height:1.15;">Adopt AI without the guesswork</h2>
+        <p style="font-size:16.5px; line-height:1.65; color:oklch(0.78 0.02 250); margin:0 0 28px;">We build custom LLM-powered products and advise leadership teams on where AI actually creates value in their organization — then implement it with your people, not around them.</p>
+        <a href="#contact" class="btn" style="display:inline-block; background:oklch(0.65 0.16 55); color:oklch(0.15 0.02 55); padding:14px 26px; border-radius:100px; font-weight:700; font-size:15.5px;">Talk to a Specialist</a>
+      </div>
+      <div class="grid-2">
+        <div class="reveal card-hover card-hover--dark" style="transition-delay:0s; background:oklch(0.28 0.05 250); border:1px solid oklch(0.36 0.04 250); border-radius:14px; padding:24px;">
+          <div class="icon-badge" style="width:40px; height:40px; margin-bottom:12px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l2.2 4.6L19 9l-4.8 1.4L12 15l-2.2-4.6L5 9l4.8-1.4L12 3Z" stroke="oklch(0.78 0.1 55)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 style="font-size:16px; font-weight:700; color:oklch(0.96 0.005 250); margin:0 0 10px;">Custom LLM Apps</h4>
+          <p style="font-size:13.5px; line-height:1.55; color:oklch(0.72 0.02 250); margin:0;">Copilots and assistants tailored to your workflows and data.</p>
+        </div>
+        <div class="reveal card-hover card-hover--dark" style="transition-delay:.08s; background:oklch(0.28 0.05 250); border:1px solid oklch(0.36 0.04 250); border-radius:14px; padding:24px;">
+          <div class="icon-badge" style="width:40px; height:40px; margin-bottom:12px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="6.5" stroke="oklch(0.78 0.1 55)" stroke-width="1.6"/><path d="M20 20l-4.3-4.3" stroke="oklch(0.78 0.1 55)" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h4 style="font-size:16px; font-weight:700; color:oklch(0.96 0.005 250); margin:0 0 10px;">AI Readiness Audit</h4>
+          <p style="font-size:13.5px; line-height:1.55; color:oklch(0.72 0.02 250); margin:0;">Where AI creates real value in your organization, and where it doesn't.</p>
+        </div>
+        <div class="reveal card-hover card-hover--dark" style="transition-delay:.16s; background:oklch(0.28 0.05 250); border:1px solid oklch(0.36 0.04 250); border-radius:14px; padding:24px;">
+          <div class="icon-badge" style="width:40px; height:40px; margin-bottom:12px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12a8 8 0 0 1 13.7-5.7M20 12a8 8 0 0 1-13.7 5.7" stroke="oklch(0.78 0.1 55)" stroke-width="1.6" stroke-linecap="round"/><path d="M17.5 3v3.5H14M6.5 21v-3.5H10" stroke="oklch(0.78 0.1 55)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4 style="font-size:16px; font-weight:700; color:oklch(0.96 0.005 250); margin:0 0 10px;">Workflow Automation</h4>
+          <p style="font-size:13.5px; line-height:1.55; color:oklch(0.72 0.02 250); margin:0;">Wire AI into the systems your teams already use daily.</p>
+        </div>
+        <div class="reveal card-hover card-hover--dark" style="transition-delay:.24s; background:oklch(0.28 0.05 250); border:1px solid oklch(0.36 0.04 250); border-radius:14px; padding:24px;">
+          <div class="icon-badge" style="width:40px; height:40px; margin-bottom:12px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="7.5" r="3" stroke="oklch(0.78 0.1 55)" stroke-width="1.6"/><path d="M2.5 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="oklch(0.78 0.1 55)" stroke-width="1.6" stroke-linecap="round"/><path d="M16 7.5a3 3 0 1 0 0-6" stroke="oklch(0.78 0.1 55)" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <h4 style="font-size:16px; font-weight:700; color:oklch(0.96 0.005 250); margin:0 0 10px;">Team Enablement</h4>
+          <p style="font-size:13.5px; line-height:1.55; color:oklch(0.72 0.02 250); margin:0;">Training and playbooks so adoption sticks past launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section style="padding:120px 56px; max-width:1100px; margin:0 auto;">
+    <div style="max-width:640px; margin:0 auto 64px; text-align:center;">
+      <div class="reveal eyebrow-pill eyebrow-pill--light" style="margin-bottom:14px;">How We Work</div>
+      <h2 class="reveal" style="transition-delay:.06s; font-size:36px; font-weight:800; letter-spacing:-0.02em; margin:0; color:oklch(0.2 0.02 250);">Four steps, one accountable team</h2>
+    </div>
+    <div class="grid-4" style="gap:0;">
+      <div class="reveal" style="transition-delay:0s; padding:0 20px; border-left:2px solid oklch(0.9 0.01 250); position:relative;">
+        <div class="glow-orb" style="position:absolute; left:-11px; top:0; width:20px; height:20px; border-radius:50%; background:oklch(0.65 0.16 55); border:4px solid oklch(0.99 0.003 250);"></div>
+        <div style="font-size:13px; font-weight:700; color:oklch(0.55 0.16 55); margin:8px 0 10px;">01</div>
+        <h4 style="font-size:16.5px; font-weight:700; margin:0 0 8px; color:oklch(0.2 0.02 250);">Discover</h4>
+        <p style="font-size:14px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Align on goals, constraints, and where value lives.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.08s; padding:0 20px; border-left:2px solid oklch(0.9 0.01 250); position:relative;">
+        <div class="glow-orb" style="position:absolute; left:-11px; top:0; width:20px; height:20px; border-radius:50%; background:oklch(0.65 0.16 55); border:4px solid oklch(0.99 0.003 250);"></div>
+        <div style="font-size:13px; font-weight:700; color:oklch(0.55 0.16 55); margin:8px 0 10px;">02</div>
+        <h4 style="font-size:16.5px; font-weight:700; margin:0 0 8px; color:oklch(0.2 0.02 250);">Design</h4>
+        <p style="font-size:14px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Prototype the experience before writing production code.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.16s; padding:0 20px; border-left:2px solid oklch(0.9 0.01 250); position:relative;">
+        <div class="glow-orb" style="position:absolute; left:-11px; top:0; width:20px; height:20px; border-radius:50%; background:oklch(0.65 0.16 55); border:4px solid oklch(0.99 0.003 250);"></div>
+        <div style="font-size:13px; font-weight:700; color:oklch(0.55 0.16 55); margin:8px 0 10px;">03</div>
+        <h4 style="font-size:16.5px; font-weight:700; margin:0 0 8px; color:oklch(0.2 0.02 250);">Build</h4>
+        <p style="font-size:14px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Ship in weekly increments with working software, always.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.24s; padding:0 20px; border-left:2px solid oklch(0.9 0.01 250); position:relative;">
+        <div class="glow-orb" style="position:absolute; left:-11px; top:0; width:20px; height:20px; border-radius:50%; background:oklch(0.65 0.16 55); border:4px solid oklch(0.99 0.003 250);"></div>
+        <div style="font-size:13px; font-weight:700; color:oklch(0.55 0.16 55); margin:8px 0 10px;">04</div>
+        <h4 style="font-size:16.5px; font-weight:700; margin:0 0 8px; color:oklch(0.2 0.02 250);">Adopt</h4>
+        <p style="font-size:14px; line-height:1.55; color:oklch(0.5 0.02 250); margin:0;">Train your team and measure impact post-launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="padding:120px 56px; background:oklch(0.97 0.005 250);">
+    <div style="max-width:760px; margin:0 auto; text-align:center;">
+      <div class="reveal eyebrow-pill eyebrow-pill--light" style="margin-bottom:14px;">About Nymeria</div>
+      <h2 class="reveal" style="transition-delay:.06s; font-size:36px; font-weight:800; letter-spacing:-0.02em; margin:0 0 20px; color:oklch(0.2 0.02 250);">A software house that thinks like a transformation partner</h2>
+      <p class="reveal" style="transition-delay:.12s; font-size:16.5px; line-height:1.65; color:oklch(0.45 0.02 250); margin:0 0 20px;">Nymeria was founded to close the gap between ambitious digital strategy and software that actually ships. We pair senior engineers with product and change-management specialists so every build lands with the people who'll use it.</p>
+      <p class="reveal" style="transition-delay:.18s; font-size:16.5px; line-height:1.65; color:oklch(0.45 0.02 250); margin:0;">We work as an embedded extension of your team — enterprise governance when you need it, startup speed when you don't.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact" style="padding:110px 56px; background:oklch(0.22 0.05 250); text-align:center; position:relative; overflow:hidden;">
+    <div class="glow-orb" style="position:absolute; top:-160px; left:50%; transform:translateX(-50%); width:700px; height:700px; border-radius:50%; background:radial-gradient(circle, oklch(0.62 0.15 55 / 0.15), transparent 70%);"></div>
+    <div style="position:relative; max-width:640px; margin:0 auto;">
+      <div class="reveal eyebrow-pill eyebrow-pill--dark" style="margin-bottom:18px;">Get Started</div>
+      <h2 class="reveal" style="transition-delay:.06s; font-size:38px; font-weight:800; letter-spacing:-0.02em; color:oklch(0.98 0.005 250); margin:0 0 18px;">Ready to start your transformation?</h2>
+      <p class="reveal" style="transition-delay:.12s; font-size:17px; line-height:1.6; color:oklch(0.78 0.02 250); margin:0 0 32px;">Tell us where you're headed. We'll come back with a scoped plan within a week.</p>
+
+      <div class="reveal" style="transition-delay:.18s; background:oklch(0.28 0.05 250); border:1px solid oklch(0.36 0.04 250); border-radius:16px; padding:40px; display:flex; flex-direction:column; align-items:center; gap:28px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <div class="icon-badge" style="width:52px; height:52px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5" stroke="oklch(0.78 0.1 55)" stroke-width="1.7"/><path d="M3.5 6.5L12 13l8.5-6.5" stroke="oklch(0.78 0.1 55)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <a href="mailto:info@nymeriaa.com" class="btn" style="color:oklch(0.98 0.005 250); font-size:22px; font-weight:700;">info@nymeriaa.com</a>
+        </div>
+        <div style="width:100%; height:1px; background:oklch(0.4 0.04 250);"></div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <div class="icon-badge" style="width:52px; height:52px; background:oklch(0.35 0.06 55); border:1px solid oklch(0.45 0.08 55);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="oklch(0.78 0.1 55)" stroke-width="1.7"/><path d="M12 7v5l3.5 2" stroke="oklch(0.78 0.1 55)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:15px; font-weight:600; color:oklch(0.85 0.02 250);">Working Hours</div>
+          <div style="font-size:17px; font-weight:700; color:oklch(0.98 0.005 250);">9:00 AM – 9:00 PM (KSA Time)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    (function initHeroParticles() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas || prefersReducedMotion) return;
+      const ctx = canvas.getContext('2d');
+      let w, h, particles;
+      const LINK_DIST = 130;
+
+      function resize() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        w = canvas.width = rect.width;
+        h = canvas.height = rect.height;
+      }
+
+      function makeParticles() {
+        const count = w < 700 ? 22 : 46;
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+        }));
+      }
+
+      function step() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        });
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < LINK_DIST) {
+              ctx.strokeStyle = `rgba(232, 150, 90, ${0.16 * (1 - dist / LINK_DIST)})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        particles.forEach(p => {
+          ctx.fillStyle = 'rgba(232, 150, 90, 0.55)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
+          ctx.fill();
+        });
+        requestAnimationFrame(step);
+      }
+
+      resize();
+      makeParticles();
+      window.addEventListener('resize', () => { resize(); makeParticles(); });
+      requestAnimationFrame(step);
+    })();
+
+    function toggleMobileMenu() {
+      const panel = document.getElementById('mobile-menu-panel');
+      const isOpen = getComputedStyle(panel).display !== 'none';
+      isOpen ? closeMobileMenu() : openMobileMenu();
+    }
+
+    function openMobileMenu() {
+      document.getElementById('mobile-menu-panel').style.display = 'flex';
+      document.getElementById('nav-toggle').setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobile-menu-panel').style.display = 'none';
+      document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMobileMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+  </script>
+
+  <!-- FOOTER -->
+  <footer style="padding:40px 56px; display:flex; align-items:center; justify-content:space-between; background:oklch(0.99 0.003 250); border-top:1px solid oklch(0.91 0.01 250);">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <img src="uploads/nymeria-logo.jpg" alt="Nymeria" style="width:26px; height:26px; border-radius:6px; object-fit:cover;" />
+      <span style="font-weight:700; font-size:14px; color:oklch(0.35 0.02 250);">Nymeria &copy; 2026</span>
+    </div>
+    <div class="footer-links" style="display:flex; gap:28px; font-size:14px; color:oklch(0.45 0.02 250);">
+      <a href="#services" style="color:inherit;">Services</a>
+      <a href="#ai" style="color:inherit;">AI Solutions</a>
+      <a href="#about" style="color:inherit;">About</a>
+      <a href="#contact" style="color:inherit;">Contact</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
